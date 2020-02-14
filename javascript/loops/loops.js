@@ -23,6 +23,18 @@
 //     console.log(x * x);
 // }
 
+/////////////////////////////////////////////
+
+// var a = [5, "a", true, 6, NaN, 7, 8, undefined, false, 58, 16, 19, "s"];
+
+// for (var i = 0; i < a.length; i += 2) {
+//     if (typeof a[i] === 'number') {
+//         console.log(a[i]);
+//     }
+// }
+
+/////////////////////////////////////////////
+
 //////////////////////////////////// TASK 1: ////////////////////////////////////
 
 // for (number = 0; number < 15; number++) {
@@ -53,7 +65,7 @@
 // var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 // for (var index = 0; index < array.length; index++) {
-    
+
 //     result = result + array[index];
 // }
 
@@ -61,3 +73,44 @@
 
 
 ///////////////////////////////// TASK 4: ////////////////////////////////////////
+
+// var x = ['1', 'A', 'B', "c", "r", true, NaN, undefined];
+// var res = "";
+
+// for (var i = 0; i < x.length; i++) {
+//     res = res + x[i];
+// }
+// console.log(res);
+
+///////////////////////////////// TASK 5: ////////////////////////////////////////
+
+// var a = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27]];
+
+// for (i = 0; i < a.length; i++) {
+//     for (n = 0; n < a[i].length; n++) { //Don't use the same name for variables for "for" inside the "for" loop.
+//         console.log(a[i][n]);           //Variable inside the second "for" is always backed to it's original value, which is 0 in this case.
+//     }
+// }
+
+///////////////////////////// TASK 5: Vol. 2 /////////////////////////////////////
+
+// var a = [["*"], ["*", "*",], ["*", "*", "*"] ];
+
+// var res = "";
+
+// for (i = 0; i < a.length; i++) {
+//     for (n = 0; n < a[i].length; n++) { //Don't use the same name for variables for "for" inside the "for" loop.
+//         res += a[i][n] + "\t";           //Variable inside the second "for" is always backed to it's original value, which is 0 in this case.
+//     }
+//     res += "\n"
+// } console.log(res);
+
+var stars = "";
+var d = 3;
+
+for (i = 0; i < d; i++) {
+    stars += "*\t"
+    console.log(stars);
+}
+
+
