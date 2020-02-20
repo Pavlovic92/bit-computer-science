@@ -11,10 +11,10 @@
 // console.log(firstNumber, secondNumber, 3rdNumber, !4thNumber); 
 
 //It will show the error: First variable - var firstNumber is OK;
-                        //Second variable - var secondNUMBER is not spelled correctly in console.log();
-                        //Third variable - var 3rdNumber can't start with the number;
-                        //Forth variable - var !4thNumber, variable can't start with exclamation mark (!);
-                        // Conclusion - Variables can start with: lowercase letter, dollar sign ($) and bottom line (_).
+//Second variable - var secondNUMBER is not spelled correctly in console.log();
+//Third variable - var 3rdNumber can't start with the number;
+//Forth variable - var !4thNumber, variable can't start with exclamation mark (!);
+// Conclusion - Variables can start with: lowercase letter, dollar sign ($) and bottom line (_).
 
 
 //////////////////////////////// TASK 2: ////////////////////////////////
@@ -132,3 +132,31 @@
 // var myNumber = 10;
 
 // console.log (typeof myYearOfBirth === "number"); //Change the variable to see if it is true or false. Boolean = true or false.
+
+//////////////////////////////// TASK 13: ////////////////////////////////
+
+//////////////////////////////// TASK 14: ////////////////////////////////
+
+// var myAge = 127;
+
+// if (myAge > 0 && myAge < 120) {
+//     var result = true;
+// } else {
+//     var result = false;
+// }
+
+// console.log(result);
+
+
+//////////////////////////////// TASK 14: ////////////////////////////////
+
+// var minSpeed = 50;
+// var maxSpeed = 70;
+
+// if ((60 <= minSpeed && minSpeed <= 120) && (120 >= maxSpeed && 60 <= maxSpeed)) {
+//     var result = true;
+// } else {
+//     var result = false;
+// }
+
+// console.log(result);

@@ -32,16 +32,16 @@
 
 ///////////////////////////// TASK 3: /////////////////////////////////
 
-var a = [4, 2, 2, -1, 6];
-var minNumber = a[0];
+// var a = [4, 2, 2, -1, 6];
+// var minNumber = a[0];
 
-for (var i = 0; i < a.length; i++) {
-    if (minNumber > a[i]) {
-        minNumber = a[i];
-       var c = i;
-    }
-}
-console.log(c + "," + minNumber);
+// for (var i = 0; i < a.length; i++) {
+//     if (minNumber > a[i]) {
+//         minNumber = a[i];
+//         var c = i;
+//     }
+// }
+// console.log(c + "," + minNumber);
 
 
 ///////////////////////////// TASK 4: /////////////////////////////////
@@ -120,5 +120,3 @@ console.log(c + "," + minNumber);
 // }
 
 // console.log(b);
-
-
