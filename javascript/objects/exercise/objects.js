@@ -1,14 +1,26 @@
 /////////////////////// TASK 1: /////////////////////
 
-// var coffee = {
-//     name: "Espresso",
-//     strength: "strong",
-//     flavour: "arabica",
-//     milk: "no",
-//     sugar: "no"
+// var aboutCoffee = {
+//     name: "Black coffee",
+//     strength: "Strong",
+//     flavour: "Without sugar",
+//     milk: "No",
+//     sugar: "No"
 // };
 // console.log(coffee);
 
+/////////////////////// TASK 1 (Construction Function): /////////////////////
+
+// function AboutCoffee(name, strength, flavour, milk, sugar) {
+//     this.name = name;
+//     this.strength = flavour;
+//     this.flavour = strength ;
+//     this.milk = milk;
+//     this.sugar = sugar;
+// }
+
+// var result = new AboutCoffee("Maxi", "Black coffee", "Strong", "No", "No")
+// console.log(result);
 
 /////////////////////// TASK 2: /////////////////////
 
@@ -38,8 +50,7 @@
 // }
 
 // var result = new FavoriteMovie("The Lord of the Rings", ["Orlando Bloom", "Vigo Mortensen", "Elijah Wood", "Ian McKellen"], "Peter Jackson", "J.R.R. Tolkien", ["Fantasy", "Action", "Adventure", "Drama"], "Worldwide");
-// console.log(result);
-
+// console.log(result.genre[2]);
 
 
 /////////////////////// TASK 3: ///////////////////////
@@ -137,3 +148,41 @@
 
 // var a = buildRecipe("Gyros", "Greek", 5, ["2 lb boneless, skinless chicken thighs (910 g), pounded flat", "½ large yellow onion, peeled and root side removed", "1 wooden skewer, sturdy, roughly 10 inches (25 cm)"], 60, "Check menu");
 // console.log(a.deleteIngredient());
+
+//////////////////////////////// TASK 4 (Constructor Function): ////////////////////////////////////
+
+// function CreateRecipe(recipeName, typeOfCuisine, compl, listOfIngredients, prepTime, prepInstructions) {
+//     this.name = recipeName;
+//     this.cuisine = typeOfCuisine;
+//     this.complexity = compl;
+//     this.ingredients = listOfIngredients;
+//     this.time = prepTime;
+//     this.instructions = prepInstructions;
+//     this.printIngredients = function () {
+//         return this.ingredients;
+//     };
+//     this.timeToPrepare = function () {
+//         if (this.time < 15) {
+//             return this.name + " can be made under 15 minutes."
+//         }
+//         return this.name + " can NOT be made under 15 minutes."
+//     };
+//     this.changeCuisine = function (newTypeofCuisine) {
+//         return this.cuisine = newTypeofCuisine;
+//     };
+//     this.deleteIngredient= function () {
+//         var newArray = [];
+//         for (var i = 0; i < this.ingredients.length; i++) {
+//             if (this.ingredients[i] === this.ingredients[0]) {
+//                 continue;
+//             }
+//             newArray += this.ingredients[i];
+//         }
+//         return this.ingredients = newArray;
+//     }
+
+// }
+
+
+// var result = new CreateRecipe("Gyros", "Greek", 5, ["2 lb boneless, skinless chicken thighs (910 g), pounded flat", "½ large yellow onion, peeled and root side removed", "1 wooden skewer, sturdy, roughly 10 inches (25 cm)"], 60, "Check menu");
+// console.log(result.deleteIngredient());
