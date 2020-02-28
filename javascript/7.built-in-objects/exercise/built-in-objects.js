@@ -1,5 +1,5 @@
 
-////////////////////////TASK 1/////////////////////////////
+//////////////////////// TASK 1: /////////////////////////////
 
 // function duplicateArray(array) {
 //     var b = [];
@@ -13,7 +13,7 @@
 
 // console.log(duplicateArray([2, 4, 7, 11, -2, 1]));
 
-////////////////////////TASK 2 /////////////////////////////
+//////////////////////// TASK 2: /////////////////////////////
 
 // Write a functional expression that removes all duplicates in a given array.
 // Input: [8, 13, 8, 9, 12, 8, 1, 1, 4, 13]
@@ -32,7 +32,7 @@
 // }
 // console.log(removeDuplicates([8, 13, 8, 9, 12, 8, 1, 1, 4, 13]));
 
-////////////////////////TASK 3 /////////////////////////////
+//////////////////////// TASK 3: /////////////////////////////
 
 // a. Write a function that checks if a given array has odd number of elements.
 // Input: [1, 2, 9, 2, 1]
@@ -66,3 +66,7 @@
 //     return res;
 // }
 // console.log(lessThanMiddle([-1, 8.1, 3, 6, 2.3, 44, 2.11]));
+
+
+//////////////////////// TASK 4: /////////////////////////////
+
