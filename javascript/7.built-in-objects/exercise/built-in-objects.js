@@ -70,3 +70,49 @@
 
 //////////////////////// TASK 4: /////////////////////////////
 
+// function smallestElement(array) {
+//     var minValue = array[0];
+
+//     for (var i = 0; i < array.length; i++){
+
+//     }
+
+//         return {
+
+//         }
+// }
+
+// var a = [1, 4, -2, 11, 8, 1, -2, 3];
+// var res = smallestElement(a);
+
+
+
+//////////////////// TASK 4: /////////////////////
+
+// function findTheSmallestElement(collection) {
+//     var copy = collection.slice();
+
+//     copy.sort(function (a, b) {
+//         return a - b
+//     })
+
+//     var minNumber = copy[0];
+//     var minLastIndex = collection.lastIndexOf(copy[0]);
+
+//     return {
+//         minNumber: minNumber,
+//         minLastIndex: minLastIndex
+//     };
+// }
+
+// var numbers = [1, 4, -2, 11, 8, 1, -2, 3];
+
+// console.log(findTheSmallestElement(numbers));
+
+
+//////////////////// TASK 5: /////////////////////
+
+
+
+
+
