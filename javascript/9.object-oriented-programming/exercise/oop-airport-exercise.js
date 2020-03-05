@@ -59,14 +59,20 @@
     function Flight(relation, date) {
         this.relation = relation;
         this.date = date;
-        var listOfPassengers = [];
-        var flightString = '';
-        this.addPassenger = function (passenger) {
-            listOfPassengers.push(passenger);
+        this.listOfPassengers = [];
+
+        this.getNumberOfPassengers = function () {
+            return this.listOfPassengers.length;
         }
+
+        this.addPassenger = function (passenger) {
+            this.listOfPassengers.push(passenger);
+        }
+
         this.getData = function () {
-            for (var i = 0; i < listOfPassengers.length; i++) {
-                flightString += "\n" + listOfPassengers[i].getData();
+            var flightString = '';
+            for (var i = 0; i < this.listOfPassengers.length; i++) {
+                flightString += "\n" + this.listOfPassengers[i].getData();
             }
             return this.date + ', \t' + this.relation + '\n' + flightString + '\n';
         }
@@ -85,12 +91,13 @@
 
         this.getData = function () {
             var flightsData = '';
-
+            var numberOfAllPassengers = 0;
             for (var i = 0; i < this.flights.length; i++) {
                 flightsData += "\n" + this.flights[i].getData();
+                numberOfAllPassengers += this.flights[i].getNumberOfPassengers()
             }
 
-            return 'Airport: ' + this.name + ', total passengers: 4' + '\n' + flightsData;
+            return 'Airport: ' + this.name + ', total passengers: ' + numberOfAllPassengers + '\n' + flightsData;
         }
     }
 
