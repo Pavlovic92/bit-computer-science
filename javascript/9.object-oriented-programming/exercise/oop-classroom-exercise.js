@@ -1,3 +1,7 @@
+/////////////
+'use strict';
+/////////////
+
 ////////////////// STUDENT ///////////////////
 
 function Student(name, age, id) {
@@ -12,6 +16,8 @@ function Student(name, age, id) {
 var Stefan = new Student('Stefan', 27, 366);
 var Bojan = new Student('Bojan', 36, 425);
 
+//console.log(Stefan.getString());
+
 
 ////////////////// SUBJECT ///////////////////
 
@@ -25,6 +31,8 @@ function Subject(name, description) {
 
 var Web = new Subject('Web', 'HTML, CSS, Bootstrap, SASS, BOM, DOM, etc.');
 var PP = new Subject('PP', 'Programming Principles, JavaScript')
+
+//console.log(Web.getString());
 
 
 ////////////////// CLASSROOM ///////////////////
@@ -43,22 +51,28 @@ function Classroom(name) {
         var studentString = '';
         var subjectString = '';
         for (var i = 0; i < this.students.length; i++) {
-            studentString += this.students[i].getString() + '\t';
+            studentString += '\n' + this.students[i].getString() + '\n';
         }
 
         for (var j = 0; j < this.subjects.length; j++) {
-            subjectString += this.subjects[j].getString() + '\t';
+            subjectString += '\n' + this.subjects[j].getString() + '\n';
         }
 
-        return this.name + ' Classroom subjects: ' + subjectString + 'Classroom students: ' + studentString;
+        return 'Name of the group: ' + this.name + '\n' + subjectString + '\n' + studentString;
     }
 
 }
+
+//Classroom
 var BitClassroom = new Classroom('BIT 008');
+
+//Forwarding the info about the Student to the Classroom
 BitClassroom.addStudent(Stefan);
 BitClassroom.addStudent(Bojan);
 
+//Forwarding the info about the Subject to the Classroom
 BitClassroom.addSubject(Web);
 BitClassroom.addSubject(PP);
 
+//
 console.log(BitClassroom.getString());
