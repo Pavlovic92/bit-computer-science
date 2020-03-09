@@ -28,6 +28,7 @@
     var bananaExpirationDate = new Date('03/10/2020');
 
     var Banana = new Product('Banana', bananaExpirationDate);
+    console.log(Banana.getInfo());
 
 
     //console.log(Banana.getInfo());
@@ -42,7 +43,7 @@
         if (this.todaysDate < bananaExpirationDate) {
             this.addProduct = function (product) {
                 this.product.push(product)
-                console.log(this.product);
+
 
             }
         }
