@@ -1,15 +1,9 @@
+/////////////
 'use strict';
+/////////////
 
 (function () {
-
-    ////////////////////////////////// COUNTRY ////////////////////////////////
-    function Country(name, odds, continent) {
-        this.name = name;
-        this.odds = odds;
-        this.continent = continent;
-    }
-
-    var ContinentObject = Object.freeze({
+    const ContinentObject = Object.freeze({
         EUROPE: 'EU',
         ASIA: 'AS',
         AFRICA: 'AF',
@@ -18,38 +12,60 @@
         AUSTRALIA: 'AU'
     });
 
-    var serbia = new Country('Serbia', '1.1', ContinentObject.EUROPE)
-    //console.log(createCountry.continent);
 
+    ////////////////////////////////// COUNTRY ////////////////////////////////
+    function Country(name, odds, continent) {
+        this.name = name;
+        this.odds = odds;
+        this.continent = continent;
+    }
+
+    //Create country:
+    const serbia = new Country('SR', 10, ContinentObject.EUROPE);
 
     ////////////////////////////////// PERSON ////////////////////////////////
-
     function Person(name, surname, dateOfBirth) {
         this.name = name;
         this.surname = surname;
         this.dateOfBirth = new Date(dateOfBirth)
     }
-
-    var stefan = new Person('Stefan', 'Stefanovic', '12.15.1994');
-
-    Person.prototype.getPersonData = function () {
-        return this.name + ' ' + this.surname + ', ' + this.dateOfBirth;
+    ////Person prototype:
+    Person.prototype.getFullName = function () {
+        return this.name + ' ' + this.surname;
     };
 
-    console.log(stefan.getPersonData());
+    Person.prototype.getPersonData = function () {
+        return `${this.getFullName()}, ${this.dateOfBirth.toLocaleDateString()}`
+
+    };
+
+
+    Person.prototype.getAge = function () {
+        return Math.floor((new Date() - this.dateOfBirth) / 1000 / 60 / 60 / 24 / 365);
+    };
+
+    //Create person:
+    const stefan = new Person('Stefan', 'Stefanovic', '12.15.1994');
+    const veljko = new Person('Veljko', 'Ciric', '01.19.1987');
+
 
     ////////////////////////////////// PLAYER ////////////////////////////////
-
     function Player(person, betAmount, country) {
         this.person = person;
         this.betAmount = betAmount;
         this.country = country;
     }
 
+    ////Player prototype:
+    Player.prototype.getPlayerData = function () {
+        return `${this.country.name}, ${(this.country.odds * this.betAmount)} eur, ${this.person.getFullName()}, ${this.person.getAge()} years`
+    }
 
-    var stefanPlayer = new Player(stefan, 100, serbia)
+    //Create player
+    const stefanPlayer = new Player(stefan, 100, serbia);
+    const veljkoPlayer = new Player(veljko, 150, serbia);
 
-    // console.log(stefanPlayer.person.name)
+
     ////////////////////////////////// ADDRESS ////////////////////////////////
 
     function Address(country, city, postalCode, street, streetNumber) {
@@ -60,36 +76,52 @@
         this.streetNumber = streetNumber;
     }
 
-    Address.prototype.getAddressData = function () { }
-    var stefanAddress = new Address(serbia, "Belgrade", 11000, "Kneza Milosa", 82)
+    Address.prototype.getAddressData = function () {
+        return `${this.street} ${this.streetNumber}, ${this.postalCode} ${this.city}, ${this.country.name}`;
+    }
 
-    // console.log(stefanAddress)
+    //Create address:
+    const stefanAddress = new Address(serbia, "Belgrade", 11000, "Kneza Milosa", 82);
+    const veljkoAddress = new Address(serbia, "New Belgrade", 11070, "Arsenija Carnojevica", 113);
+
 
     ////////////////////////////////// BETTING PLACE ////////////////////////////////
     function BettingPlace(address) {
         this.address = address;
         this.listOfPlayers = [];
+        this.this.numberOfPlayers = 0;
+    }
+    ////Betting Place prototype:
+    BettingPlace.prototype.addPlayersToTheList = function (player) {
+        this.listOfPlayers.push(player);
+        numberOfPlayers++;
     }
 
-    var BgPlace = new BettingPlace(stefanAddress);
-    //console.log(BgPlace);
+    BettingPlace.prototype.getBettingPlaceData = function () {
+        return this.street + this.postalCode + this.city
+    }
+
+    //Create Betting Place:
+    const BelgradePlace = new BettingPlace(stefanAddress);
+    const BelgradePlace = new BettingPlace(veljkoAddress);
+    //////////To .push()
+    BelgradePlace.addPlayersToTheList(stefanPlayer);
+    BelgradePlace.addPlayersToTheList(veljkoPlayer);
+
+
 
 
     ////////////////////////////////// BETTING HOUSE ////////////////////////////////
+    // function BettingHouse(competition) {
+    //     this.competition = competition;
+    //     this.listOfBettingPlaces = [];
 
-    function BettingHouse(competition) {
-        this.competition = competition;
-        this.listOfBettingPlaces = [];
-        this.numberOfPlayers = 0;
-    }
+    // }
 
-    var Mozzart = new BettingHouse('Football World Cup')
-    //console.log(Mozzart);
+    // const Mozzart = new BettingHouse('Football World Cup');
 
 
-
-
-
+    ////////////////////////////////////////////////////////////////////////////////////
 
 
 })();
